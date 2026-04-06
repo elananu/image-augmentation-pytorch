@@ -7,7 +7,7 @@ from torchvision import transforms
 
 def imshow(img_path, transform, title):
 
-img = PIL.Image.open(img_path)
+img_path = "sample_image.jpg"
 
 fig, ax = plt.subplots(1, 2, figsize=(15, 4))
 
