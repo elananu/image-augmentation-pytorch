@@ -7,7 +7,7 @@ from torchvision import transforms
 
 def imshow(img_path, transform, title):
 
-img_path = "sample_image.jpg"
+img = PIL.Image.open(img_path)
 
 fig, ax = plt.subplots(1, 2, figsize=(15, 4))
 
@@ -20,12 +20,12 @@ ax[1].set_title(title)
 ax[1].imshow(transformed_img)
 ax[1].axis('off')
 
-save_path = f"/content/{title.replace(' ', '_').lower()}.png"
+save_path = f"outputs/{title.replace(' ', '_').lower()}.png"
 transformed_img.save(save_path)
 print(f" Saved: {save_path}")
 plt.show()
 
-img_path = "/content/2cc24bc422ba9c48236b13ac0aca1145.jpg"
+img_path = "sample_image.jpg"
 
 loader_transform = transforms.Resize((140, 140))
 imshow(img_path, loader_transform, 'Scaling')
